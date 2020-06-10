@@ -1,0 +1,137 @@
+@import 'mixins/mixins.scss';
+@import 'common/var.scss';
+
+[class*="yx-col-"] {
+    float: left;
+    box-sizing: border-box;
+}
+
+@for $i from 1 through 24 {
+    .#{$name-prefix}-col-#{$i} {
+        width: 100%*($i/24);
+    }
+
+    .#{$name-prefix}-col-offset-#{$i} {
+        margin-left: 100%*($i/24);
+    }
+
+    .#{$name-prefix}-col-pull-#{$i} {
+        position: relative;
+        left: 100%*($i/24);
+    }
+
+    .#{$name-prefix}-col-push-#{$i} {
+        position: relative;
+        right: 100%*($i/24);
+    }
+}
+
+@media screen and (max-width: $--sm) {
+    @for $i from 1 through 24 {
+        .#{$name-prefix}-col-xs-#{$i} {
+            width: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-xs-offset-#{$i} {
+            margin-left: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-xs-pull-#{$i} {
+            position: relative;
+            left: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-xs-push-#{$i} {
+            position: relative;
+            right: 100%*($i/24);
+        }
+    }
+}
+
+@media screen and (min-width: $--sm) {
+    @for $i from 1 through 24 {
+        .#{$name-prefix}-col-sm-#{$i} {
+            width: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-sm-offset-#{$i} {
+            margin-left: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-sm-pull-#{$i} {
+            position: relative;
+            left: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-sm-push-#{$i} {
+            position: relative;
+            right: 100%*($i/24);
+        }
+    }
+}
+
+@media screen and (min-width: $--md) {
+    @for $i from 1 through 24 {
+        .#{$name-prefix}-col-md-#{$i} {
+            width: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-md-offset-#{$i} {
+            margin-left: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-md-pull-#{$i} {
+            position: relative;
+            left: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-md-push-#{$i} {
+            position: relative;
+            right: 100%*($i/24);
+        }
+    }
+}
+
+@media screen and (min-width: $--lg) {
+    @for $i from 1 through 24 {
+        .#{$name-prefix}-col-lg-#{$i} {
+            width: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-lg-offset-#{$i} {
+            margin-left: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-lg-pull-#{$i} {
+            position: relative;
+            left: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-lg-push-#{$i} {
+            position: relative;
+            right: 100%*($i/24);
+        }
+    }
+}
+
+@media screen and (min-width: $--xl) {
+    @for $i from 1 through 24 {
+        .#{$name-prefix}-col-xl-#{$i} {
+            width: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-xl-offset-#{$i} {
+            margin-left: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-xl-pull-#{$i} {
+            position: relative;
+            left: 100%*($i/24);
+        }
+    
+        .#{$name-prefix}-col-xl-push-#{$i} {
+            position: relative;
+            right: 100%*($i/24);
+        }
+    }
+}

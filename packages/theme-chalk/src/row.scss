@@ -1,0 +1,12 @@
+@import "mixins/mixins.scss";
+
+@include block(row) {
+    box-sizing: border-box;
+
+    &::after {
+        clear: both;
+    }
+    @include modifier(flex) {
+        display: flex;
+    }
+}

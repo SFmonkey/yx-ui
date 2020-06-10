@@ -1,0 +1,70 @@
+@import 'mixins/mixins.scss';
+@import 'common/var.scss';
+@import 'mixins/_button.scss';
+
+@include block(checkbox-button) {
+    display: inline-block;
+    position: relative;
+
+    @include element(origin) {
+        position: absolute;
+        margin: 0;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    @include element(inner) {
+        display: inline-block;
+        border: $--border;
+        border-left: 0;
+        line-height: 1;
+        box-sizing: border-box;
+        @include btn-size($--button-padding-vertical, $--button-padding-horizontal, $--button-fontsize, 0);
+    }
+
+    @include is(checked) {
+        .yx-checkbox-button__inner {
+            color: $--checkbox-button-checked-font-color;
+            background-color: $--checkbox-button-checked-background-color;
+            border-color: $--checkbox-button-checked-border-color;
+        }
+    }
+
+    @include is(disabled) {
+        .yx-checkbox-button__inner {
+            cursor: not-allowed;
+            color: $--button-disabled-font-color;
+            background-color: $--button-disabled-background-color;
+            border-color: $--button-disabled-border-color;
+        }
+    }
+
+    &:first-child {
+        .yx-checkbox-button__inner {
+            border-left: $--border;
+            border-radius:  $--border-radius-base 0 0 $--border-radius-base ;
+          }
+    }
+
+    &:last-child {
+        .yx-checkbox-button__inner {
+            border-radius: 0 $--border-radius-base $--border-radius-base 0;
+          }
+    }
+
+    @include modifier(medium) {
+        .yx-checkbox-button__inner {
+          @include btn-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-fontsize, 0);
+        }
+      }
+      @include modifier(small) {
+        .yx-checkbox-button__inner {
+          @include btn-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-fontsize, 0);
+        }
+      }
+      @include modifier(mini) {
+        .yx-checkbox-button__inner {
+          @include btn-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-fontsize, 0);
+        }
+      }
+}

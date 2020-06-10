@@ -1,0 +1,6 @@
+@import 'mixins/mixins.scss';
+
+@include block(main) {
+    flex: 1;
+    box-sizing: border-box;
+}

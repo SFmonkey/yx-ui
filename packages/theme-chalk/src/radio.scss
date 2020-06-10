@@ -1,0 +1,128 @@
+@import 'mixins/mixins.scss';
+@import 'common/var.scss';
+@import 'mixins/_button.scss';
+
+@include block(radio) {
+    display: inline-block;
+    font-size: $--radio-font-size;
+    white-space: nowrap;
+    line-height: 1;
+    cursor: pointer;
+
+    @include element(input) {
+        position: relative;
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+
+        @include is(checked) {
+            .yx-radio__inner {
+                position: relative;
+                border-color: $--radio-checked-input-border-color;
+                background: $--radio-checked-input-background;
+
+
+                &::after {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+        }
+    }
+
+    @include element(inner) {
+        border: $--border;
+        border-radius: $--radio-inner-border-radius;
+        display: inline-block;
+        width: $--radio-inner-width;
+        height: $--radio-inner-height;
+
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: '';
+            transform: translate(-50%, -50%) scale(0);
+            width: $--radio-inner-after-width;
+            height: $--radio-inner-after-height;
+            border-radius: $--radio-inner-after-border-radius;
+            background: $--radio-inner-after-background;
+            transition: transform .15s ease-in;
+        }
+    }
+    
+    @include element(native) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    @include element(label) {
+        padding-left: 10px;
+        font-size: $--radio-font-size;
+    }
+
+    @include is(disabled) {
+        cursor: not-allowed;
+    }
+
+    .is-disabled {
+        cursor: not-allowed;
+    }
+
+    @include is(bordered) {
+        border: $--border;
+        border-radius: $--button-border-radius;
+        box-sizing: border-box;
+        padding: $--radio-bordered-padding;
+    }
+
+    @include modifier(medium) {
+        &.is-bordered {
+            padding: $--radio-bordered-medium-padding;
+            border-radius: $--button-medium-border-radius;
+            height: $--radio-bordered-medium-height;
+            .yx-radio__label {
+                font-size: $--button-medium-fontsize;
+            }
+            .yx-radio__inner {
+                height: $--radio-bordered-medium-input-height;
+                width: $--radio-bordered-medium-input-width;
+            }
+        }
+    }
+
+    @include modifier(small) {
+        &.is-bordered {
+            padding: $--radio-bordered-small-padding;
+            border-radius: $--button-small-border-radius;
+            height: $--radio-bordered-small-height;
+            .yx-radio__label {
+                font-size: $--button-small-fontsize;
+            }
+            .yx-radio__inner {
+                height: $--radio-bordered-small-input-height;
+                width: $--radio-bordered-small-input-width;
+            }
+        }
+    }
+
+    @include modifier(mini) {
+        &.is-bordered {
+            padding: $--radio-bordered-mini-padding;
+            border-radius: $--button-mini-border-radius;
+            height: $--radio-bordered-mini-height;
+            .yx-radio__label {
+                font-size: $--button-mini-fontsize;
+            }
+            .yx-radio__inner {
+                height: $--radio-bordered-mini-input-height;
+                width: $--radio-bordered-mini-input-width;
+            }
+        }
+    }
+}

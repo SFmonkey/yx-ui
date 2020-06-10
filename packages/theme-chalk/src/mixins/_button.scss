@@ -1,0 +1,10 @@
+@mixin btn-size($padding-vertical, $padding-horizontal, $fontsize, $border-radius) {
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $fontsize;
+    border-radius: $border-radius;
+
+    &.is-circle {
+        border-radius: 50%;
+        padding: $padding-vertical;
+    }
+}

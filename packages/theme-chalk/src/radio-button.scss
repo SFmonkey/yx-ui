@@ -1,0 +1,45 @@
+@import 'mixins/mixins.scss';
+@import 'common/var.scss';
+@import 'mixins/_button.scss';
+
+@include block(radio-button) {
+    position: relative;
+    display: inline-block;
+
+    @include element(origin) {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+    
+    @include element(inner) {
+        display: inline-block;
+        font-size: $--radio-font-size;
+        border: $--border;
+        @include btn-size($--button-padding-vertical, $--button-padding-horizontal, $--button-fontsize, 0);
+    }
+
+    @include is(checked) {
+        .yx-radio-button__inner {
+            color: $--radio-button-checked-inner-color;
+            border-color: $--radio-button-checked-inner-border-color;
+            background-color: $--radio-button-checked-inner-background-color;
+        }
+    }
+
+    @include modifier(medium) {
+        & .yx-radio-button__inner{
+            @include btn-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-fontsize, $--button-medium-border-radius);
+        }
+    }
+    @include modifier(small) {
+        & .yx-radio-button__inner{
+            @include btn-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-fontsize, $--button-small-border-radius);
+        }
+    }
+    @include modifier(mini) {
+        & .yx-radio-button__inner{
+            @include btn-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-fontsize, $--button-mini-border-radius);
+        }
+    }
+}

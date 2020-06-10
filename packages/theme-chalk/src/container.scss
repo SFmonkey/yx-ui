@@ -1,0 +1,12 @@
+@import 'mixins/mixins.scss';
+
+@include block(container) {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    box-sizing: border-box;
+    
+    @include is(vertical) {
+        flex-direction: column;
+    }
+}

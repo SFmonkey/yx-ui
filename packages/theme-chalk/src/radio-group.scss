@@ -1,0 +1,24 @@
+ @import 'mixins/mixins.scss';
+ @import 'common/var.scss';
+ 
+
+ @include block(radio-group) {
+    .yx-radio-button {
+        .yx-radio-button__inner {
+            border-left: 0;
+        }
+
+        &:first-child{
+            .yx-radio-button__inner {
+                border-left: $--border;
+                border-radius: $--border-radius 0 0 $--border-radius;
+            }
+        }
+        
+        &:last-child{
+            .yx-radio-button__inner {
+                border-radius: 0 $--border-radius $--border-radius  0;
+            }
+        }
+    }
+ }

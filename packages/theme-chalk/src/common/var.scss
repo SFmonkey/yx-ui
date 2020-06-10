@@ -1,0 +1,228 @@
+$--sm: 768px !default;
+$--md: 992px !default;
+$--lg: 1200px !default;
+$--xl: 1920px !default;
+
+/*-------------color---------*/
+// color primary
+$--color-primary: #00918e !default;
+// color success
+$--color-success: #1f6650 !default;
+// color warning
+$--color-warning: #ff7315 !default;
+// color danger
+$--color-danger: #da2d2d !default;
+// color info
+$--color-info: #6decb9 !default;
+// color text
+$--color-text: transparent !default;
+$--color-white: #ffffff !default;
+$--color-black: #000000 !default;
+$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default;
+$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default;
+$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default;
+$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default;
+$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default;
+$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default;
+$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default;
+$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default;
+$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default;
+
+$--color-text-placeholder: #c0c4cc !default;
+$--color-text-secondary: #909399 !default;
+$--color-text-regular: #606266 !default;
+// border color
+$--border-color: #dddddd !default;
+$--border-color-light: #e4e7ed !default;
+$--border-color-lighter: #ebeef5 !default;
+
+/*------------Typography----------*/
+$--font-size-base: 14px !default;
+
+/*------------disable-----------*/
+$--disabled-fill-base: #f5f7fa !default;
+$--disabled-color-base: $--color-text-placeholder !default;
+$--disabled-border-base: $--border-color-light !default;
+
+//link color
+$--link-color: #666666 !default;
+
+/* ----------border----------*/
+$--border-width: 1px !default;
+$--border-style: solid !default;
+$--border-radius: 4px !default;
+$--border-radius-base: 4px !default;
+$--border-radius-circle: 100% !default;
+$--border: $--border-width $--border-style $--border-color !default;
+$--border-base: $--border-width $--border-style $--border-color !default;
+$--border-color-hover: #c0c4cc !default;
+
+/*-------------button---------*/
+// button base
+$--button-padding-vertical: 12px !default;
+$--button-padding-horizontal: 20px !default;
+$--button-fontsize: 14px !default;
+$--button-border-radius: 4px !default;
+// button primary
+$--button-primary-border-color: $--color-primary !default;
+$--button-primary-background-color: $--color-primary !default;
+$--button-primary-font-color: $--color-white !default;
+// button success
+$--button-success-border-color: $--color-success !default;
+$--button-success-background-color: $--color-success !default;
+$--button-success-font-color: $--color-white !default;
+// button warning
+$--button-warning-border-color: $--color-warning !default;
+$--button-warning-background-color: $--color-warning !default;
+$--button-warning-font-color: $--color-white !default;
+// button danger
+$--button-danger-border-color: $--color-danger !default;
+$--button-danger-background-color: $--color-danger !default;
+$--button-danger-font-color: $--color-white !default;
+// button info
+$--button-info-border-color: $--color-info !default;
+$--button-info-background-color: $--color-info !default;
+$--button-info-font-color: $--color-white !default;
+// button text
+$--button-text-border-color: $--color-text !default;
+$--button-text-background-color: $--color-text !default;
+$--button-text-font-color: $--color-primary !default;
+// button medium
+$--button-medium-padding-vertical: 10px !default;
+$--button-medium-padding-horizontal: 20px !default;
+$--button-medium-fontsize: 14px !default;
+$--button-medium-border-radius: $--button-border-radius !default;
+// button small
+$--button-small-padding-vertical: 9px !default;
+$--button-small-padding-horizontal: 15px !default;
+$--button-small-fontsize: 12px !default;
+$--button-small-border-radius: #{$--button-border-radius - 1} !default;
+// button mini
+$--button-mini-padding-vertical: 7px !default;
+$--button-mini-padding-horizontal: 15px !default;
+$--button-mini-fontsize: 12px !default;
+$--button-mini-border-radius: #{$--button-border-radius - 1} !default;
+// button dilution
+$--button-hover-dilution: 10% !default;
+$--button-active-dilution: 10% !default;
+
+// button disabled
+$--button-disabled-font-color: #cccccc !default;
+$--button-disabled-border-color: #eeeeee !default;
+$--button-disabled-background-color: $--color-white !default;
+
+/*--------link--------*/
+$--link-primary-font-color: $--color-primary !default;
+$--link-danger-font-color: $--color-danger !default;
+$--link-success-font-color: $--color-success !default;
+$--link-warning-font-color: $--color-warning !default;
+$--link-info-font-color: $--color-info !default;
+$--link-font-size: 14px !default;
+$--link-font-weight: 500 !default;
+$--link-hover-dilution: 20% !default;
+
+/*--------radio-------*/
+$--radio-font-size: 14px !default;
+$--radio-bordered-padding: 12px !default;
+$--radio-bordered-height: 40px !default;
+$--radio-bordered-medium-padding: 10px 20px 0 10px !default;
+$--radio-bordered-small-padding: 8px 15px 0 10px !default;
+$--radio-bordered-mini-padding: 6px 15px 0 10px !default;
+$--radio-bordered-medium-height: 36px !default;
+$--radio-bordered-small-height: 32px !default;
+$--radio-bordered-mini-height: 28px !default;
+$--radio-bordered-medium-input-height: 14px !default;
+$--radio-bordered-medium-input-width: 14px !default;
+$--radio-bordered-small-input-height: 12px !default;
+$--radio-bordered-small-input-width: 12px !default;
+$--radio-bordered-mini-input-height: 12px !default;
+$--radio-bordered-mini-input-width: 12px !default;
+$--radio-inner-width: 14px !default;
+$--radio-inner-height: 14px !default;
+$--radio-inner-after-width: 4px !default;
+$--radio-inner-after-height: 4px !default;
+$--radio-inner-border-radius: $--border-radius-circle !default;
+$--radio-inner-border-color: $--color-primary !default;
+$--radio-checked-input-border-color: $--color-primary !default;
+$--radio-checked-input-background: $--color-primary !default;
+$--radio-inner-after-background: $--color-white !default;
+$--radio-inner-after-border-radius: $--border-radius-circle !default;
+$--radio-button-checked-inner-color: $--color-white !default;
+$--radio-button-checked-inner-border-color: $--color-primary !default;
+$--radio-button-checked-inner-background-color: $--color-primary !default;
+
+/*---------checkbox---------*/
+$--checkbox-font-size: 14px !default;
+$--checkbox-inner-border: $--border !default;
+$--checkbox-inner-border-radius: 2px !default;
+$--checkbox-inner-width: 14px !default;
+$--checkbox-inner-height: 14px !default;
+$--checkbox-checked-border-color: $--color-primary !default;
+$--checkbox-checked-background-color: $--color-primary !default;
+$--checkbox-checked-icon-color: $--color-white !default;
+$--checkbox-inner-hover-border-color: $--color-primary !default;
+$--checkbox-disabled-border-color: $--border-color !default;
+$--checkbox-disabled-background-color: #edf2fc !default;
+$--checkbox-disabled-after-border-color: $--color-text-placeholder !default;
+$--checkbox-indeterminate-border-color: $--color-primary !default;
+$--checkbox-indeterminate-background-color: $--color-primary !default;
+$--checkbox-button-checked-font-color: $--color-white !default;
+$--checkbox-button-checked-background-color: $--color-primary !default;
+$--checkbox-button-checked-border-color: $--color-primary !default;
+$--checkbox-bordered-padding: 9px 20px 9px 10px !default;
+$--checkbox-bordered-height: 40px !default;
+$--checkbox-bordered-medium-padding: 7px 20px 7px 10px !default;
+$--checkbox-bordered-small-padding: 5px 15px 5px 10px !default;
+$--checkbox-bordered-mini-padding: 3px 15px 3px 10px !default;
+$--checkbox-bordered-medium-input-height: 14px !default;
+$--checkbox-bordered-medium-input-width: 14px !default;
+$--checkbox-bordered-medium-height: 36px !default;
+$--checkbox-bordered-small-input-height: 12px !default;
+$--checkbox-bordered-small-input-width: 12px !default;
+$--checkbox-bordered-small-height: 32px !default;
+$--checkbox-bordered-mini-input-height: 12px !default;
+$--checkbox-bordered-mini-input-width: 12px !default;
+$--checkbox-bordered-mini-height: 28px !default;
+
+/*--------------input--------------*/
+$--input-border-radius: $--border-radius-base !default;
+$--input-placeholder-color: $--color-text-placeholder !default;
+$--input-focus-border: $--color-primary !default;
+$--input-hover-border: $--border-color-hover !default;
+$--input-background-color: $--color-white !default;
+$--input-disabled-fill: $--disabled-fill-base !default;
+$--input-disabled-border: $--disabled-border-base !default;
+$--input-disabled-color: $--disabled-color-base !default;
+$--input-disabled-placeholder-color: $--color-text-placeholder !default;
+$--input-icon-color: $--color-text-placeholder !default;
+$--input-icon-hover-color: $--color-text-secondary !default;
+$--input-font-color: $--color-text-regular !default;
+$--input-border: $--border-base !default;
+$--input-medium-font-size: 14px !default;
+$--input-small-font-size: 13px !default;
+$--input-mini-font-size: 12px !default;
+$--input-medium-height: 36px !default;
+$--input-small-height: 32px !default;
+$--input-mini-height: 28px !default;
+
+/* Message
+-------------------------- */
+$--message-shadow: $--box-shadow-base !default;
+$--message-min-width: 380px !default;
+$--message-background-color: #edf2fc !default;
+$--message-padding: 15px 15px 15px 20px !default;
+/// color||Color|0
+$--message-close-icon-color: $--color-text-placeholder !default;
+/// height||Other|4
+$--message-close-size: 16px !default;
+/// color||Color|0
+$--message-close-hover-color: $--color-text-secondary !default;
+
+/// color||Color|0
+$--message-success-font-color: $--color-success !default;
+/// color||Color|0
+$--message-info-font-color: $--color-info !default;
+/// color||Color|0
+$--message-warning-font-color: $--color-warning !default;
+/// color||Color|0
+$--message-danger-font-color: $--color-danger !default;

@@ -1,0 +1,174 @@
+@import 'mixins/mixins.scss';
+@import 'common/var.scss';
+
+@mixin btn-size($padding-vertical, $padding-horizontal, $fontsize, $border-radius) {
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $fontsize;
+    border-radius: $border-radius;
+
+    &.is-circle {
+        border-radius: 50%;
+        padding: $padding-vertical;
+    }
+}
+
+@mixin btn-type($color, $border-color, $background-color) {
+    color: $color;
+    border-color: $border-color;
+    background-color: $background-color;
+
+    &:hover,
+    &:focus {
+        color: $color;
+        background-color: mix($--color-white, $background-color, $--button-hover-dilution);
+        border-color: mix($--color-white, $border-color, $--button-hover-dilution);
+    }
+    &:active {
+        color: $--color-primary;
+        background-color: mix($--color-white, $background-color, $--button-active-dilution);
+        border-color: mix($--color-white, $border-color, $--button-active-dilution);
+        outline: none;
+    }
+
+    &.is-plain {
+        @include btn-plain($background-color);
+    }
+
+    &.is-disabled {
+        color: $--button-disabled-font-color;
+        border-color: mix($--color-white, $border-color, );
+        background-color: mix($--color-white, $background-color, );
+        cursor: not-allowed;
+    }
+}
+
+@mixin btn-plain($color) {
+    color: $color;
+    border-color: mix($--color-white,$color,90%);
+    background-color: mix($--color-white,$color,60%);
+
+    &:hover,
+    &:focus {
+        color: $--color-white;
+        background-color: $color;
+        border-color: $color;
+    }
+    &:active {
+        color: $--color-white;
+        background-color: $color;
+        border-color: mix($--color-white,$color,$--button-active-dilution);
+        outline: none;
+    }
+
+    &.is-disabled {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+          color: mix($--color-white, $color, 40%);
+          background-color: mix($--color-white, $color, 90%);
+          border-color: mix($--color-white, $color, 80%);
+        }
+      }
+}
+
+@include block(button) {
+    line-height: 1;
+    background: $--color-white;
+    border: $--border;
+    white-space: nowrap;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    @include btn-size($--button-padding-vertical,$--button-padding-horizontal,$--button-fontsize,$--button-border-radius);
+    &:hover,
+    &:focus {
+        color: $--color-primary;
+        background-color: $--color-primary-light-7;
+        border-color: $--color-primary-light-9;
+    }
+    &:active {
+        color: $--color-primary;
+        background-color: $--color-primary-light-7;
+        border-color: $--color-primary-light-9;
+    }
+    & [class*="yx-icon-"]+span {
+        margin-left: 5px;
+    }
+    @include is(plain) {
+        &:hover, 
+        &:focus {
+            color: $--color-primary;
+            border-color: $--color-primary;
+        }
+
+        &:active {
+            color: $--color-primary;
+            border-color: $--color-primary;
+            background: $--color-white;
+            outline: none;
+        }
+    }
+    @include is(round) {
+        border-radius: 20px;
+    }
+    @include is(circle) {
+        border-radius: 50%;
+        padding: 12px;
+    }
+    @include is(disabled) {
+        &,
+        &.hover,
+        &.focus {
+            color: $--button-disabled-font-color;
+            border-color: $--button-disabled-border-color;
+            background-color: $--color-white;
+            cursor: not-allowed;
+        }
+    }
+    @include is(loading) {
+        pointer-events: none;
+        position: relative;
+        &:before {
+            pointer-events: none;
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            border-radius: inherit;
+            background-color: rgba(255,255,255,.35);
+          }
+    }
+    @include modifier(medium) {
+        @include btn-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-fontsize, $--button-medium-border-radius);
+    }
+    @include modifier(small) {
+        @include btn-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-fontsize, $--button-small-border-radius);
+    }
+    @include modifier(mini) {
+        @include btn-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-fontsize, $--button-mini-border-radius);
+    }
+    @include modifier(primary) {
+        @include btn-type($--button-primary-font-color, $--button-primary-border-color, $--button-primary-background-color);
+    }
+    @include modifier(success) {
+        @include btn-type($--button-success-font-color, $--button-success-border-color, $--button-success-background-color);
+    }
+    @include modifier(warning) {
+        @include btn-type($--button-warning-font-color, $--button-warning-border-color, $--button-warning-background-color);
+    }
+    @include modifier(danger) {
+        @include btn-type($--button-danger-font-color, $--button-danger-border-color, $--button-danger-background-color);
+    }
+    @include modifier(info) {
+        @include btn-type($--button-info-font-color, $--button-info-border-color, $--button-info-background-color);
+    }
+    @include modifier(text) {
+        padding-left: 0;
+        padding-right: 0;
+        @include btn-type($--button-text-font-color, $--button-text-border-color, $--button-text-background-color);
+    }
+}

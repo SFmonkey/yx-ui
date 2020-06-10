@@ -1,0 +1,223 @@
+@import 'mixins/mixins.scss';
+@import 'common/var.scss';
+
+@include block(input) {
+    display: inline-block;
+    width: 100%;
+    font-size: $--font-size-base;
+    position: relative;
+
+    @include element(inner) {
+        border: $--border-base;
+        border-radius: $--input-border-radius;
+        background-color: $--input-background-color;
+        width: 100%;
+        height: 40px;
+        padding: 5px 15px;
+        line-height: 1.5;
+        box-sizing: border-box;
+        outline: 0;
+
+        &::placeholder {
+            color: $--input-placeholder-color;
+        }
+
+        &:hover {
+            border-color: $--input-hover-border;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $--input-focus-border;
+        }
+    }
+
+    @include is(disabled) {
+        .yx-input__inner {
+            cursor: not-allowed;
+            background-color: $--input-disabled-fill;
+            border-color: $--input-disabled-border;
+            color: $--input-disabled-color;
+        }
+
+        &::placeholder {
+            color: $--input-disabled-placeholder-color;
+        }
+    }
+
+    @include modifier(prefix) {
+        .yx-input__inner {
+            padding-left: 30px;
+        }
+
+        .yx-input__icon {
+            left: 10px;
+        }
+    }
+
+    @include modifier(suffix) {
+        .yx-input__inner {
+            padding-right: 30px;
+        }
+
+        .yx-input__icon {
+            right: 10px;
+        }
+    }
+
+    & .yx-input__count {
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        color: $--color-info;
+        font-size: 12px;
+
+        .yx-input__count-inner {
+            background: $--color-white;
+            line-height: initial;
+            display: inline-block;
+            padding: 0 5px;
+        }
+    }
+
+    .yx-input__icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $--input-icon-color;
+        cursor: pointer;
+        &:hover {
+            color: $--input-icon-hover-color;
+        }
+    }
+
+    @include modifier(medium) {
+        font-size: $--input-medium-font-size;
+
+        .yx-input__inner {
+            height: $--input-medium-height;
+            line-height: $--input-medium-height;
+        }
+
+        .yx-input__icon {
+            line-height: $--input-medium-height;
+        }
+    }
+    @include modifier(small) {
+        font-size: $--input-small-font-size;
+
+        .yx-input__inner {
+            height: $--input-small-height;
+            line-height: $--input-small-height;
+        }
+
+        .yx-input__icon {
+            line-height: $--input-small-height;
+        }
+    }
+    @include modifier(mini) {
+        font-size: $--input-mini-font-size;
+
+        .yx-input__inner {
+            height: $--input-mini-height;
+            line-height: $--input-mini-height;
+        }
+
+        .yx-input__icon {
+            line-height: $--input-mini-height;
+        }
+    }
+}
+
+@include block(textarea) {
+    display: inline-block;
+    width: 100%;
+    font-size: $--font-size-base;
+    position: relative;
+    @include element(inner) {
+        width: 100%;
+        resize: vertical;
+        padding: 5px 15px;
+        line-height: 1.5;
+        font-size: inherit;
+        color: $--input-font-color;
+        background-color: $--input-background-color;
+        border: $--input-border;
+        border-radius: $--input-border-radius;
+        box-sizing: border-box;
+        outline: 0;
+
+        &::placeholder {
+            color: $--input-placeholder-color;
+        }
+
+        &:hover {
+            border-color: $--input-hover-border;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $--input-focus-border;
+        }
+    }
+
+    @include is(disabled) {
+        .yx-textarea__inner {
+            background-color: $--input-disabled-fill;
+            border-color: $--input-disabled-border;
+            color: $--input-disabled-color;
+            cursor: not-allowed;
+
+            &::placeholder {
+                color: $--input-disabled-placeholder-color;
+            }
+        }
+    }
+
+    @include modifier(prefix) {
+        .yx-input__inner {
+            padding-left: 30px;
+        }
+
+        .yx-input__icon {
+            left: 10px;
+        }
+    }
+
+    @include modifier(suffix) {
+        .yx-input__inner {
+            padding-right: 30px;
+        }
+
+        .yx-input__icon {
+            right: 10px;
+        }
+    }
+
+    & .yx-input__count {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        align-items: center;
+        color: $--input-icon-color;
+        font-size: 12px;
+
+        .yx-input__count-inner {
+            background: $--color-white;
+            line-height: initial;
+            display: inline-block;
+            padding: 0 5px;
+        }
+    }
+
+    .yx-input__icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $--input-icon-color;
+        cursor: pointer;
+        &:hover {
+            color: $--input-icon-hover-color;
+        }
+    }
+}
