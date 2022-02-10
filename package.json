@@ -52,7 +52,7 @@
     "karma-spec-reporter": "^0.0.32",
     "karma-webpack": "^4.0.2",
     "mocha": "^6.2.2",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "progress-bar-webpack-plugin": "^1.12.1",
     "sass-loader": "^8.0.0",
     "sinon": "^7.5.0",
